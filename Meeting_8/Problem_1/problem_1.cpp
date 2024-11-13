@@ -118,7 +118,63 @@ string  tempName;
     
     print();
     }   
-//int Bubble()
+void Bubble_NISN(){
+long n = 7, tempNISN, tempValue;
+string tempName;
+
+for (int i = 0; i < n - 1; i++) {
+    for (int j = 0; j < n - i - 1; j++) {
+      
+        if (NISN[j] < NISN[j + 1]) {
+         
+            tempValue = value[j];
+            value[j] = value[j + 1];
+            value[j + 1] = tempValue;
+
+         
+            tempNISN = NISN[j];
+            NISN[j] = NISN[j + 1];
+            NISN[j + 1] = tempNISN;
+
+          
+            tempName = Name[j];
+            Name[j] = Name[j + 1];
+            Name[j + 1] = tempName;
+        }
+    }
+}
+
+print();
+}
+void Bubble_value(){
+long n = 7, tempNISN, tempValue;
+string tempName;
+
+for (int i = 0; i < n - 1; i++) {
+    for (int j = 0; j < n - i - 1; j++) {
+        
+        if (value[j] < value[j + 1]) {
+            
+            tempValue = value[j];
+            value[j] = value[j + 1];
+            value[j + 1] = tempValue;
+
+            
+            tempNISN = NISN[j];
+            NISN[j] = NISN[j + 1];
+            NISN[j + 1] = tempNISN;
+
+            
+            tempName = Name[j];
+            Name[j] = Name[j + 1];
+            Name[j + 1] = tempName;
+        }
+    }
+}
+
+print();
+}
+
 int main (){
 cout<<"***Insertion Based on NISN***"<<endl;
 Insertion_NISN();
@@ -131,6 +187,12 @@ Selection_NISN();
 cout<<endl;
 cout<<"***Selection Based on value***"<<endl;
 Selection_value();
+cout<<endl;
+cout<<"***Bubble Based on NISN***"<<endl;
+Bubble_NISN();
+cout<<endl;
+cout<<"***Bubble Based on value***"<<endl;
+Bubble_value();
 
     return 0;
 }
