@@ -14,25 +14,25 @@ void print(){
     cout << NISN[i]  << " - " << Name[i] << " - " << value[i] << endl;
     }
 }
-void Bubble_NISN(){
+void Bubble_value(){
 long n = 7, tempNISN, tempValue;
 string tempName;
 
 for (int i = 0; i < n - 1; i++) {
     for (int j = 0; j < n - i - 1; j++) {
-      
-        if (NISN[j] < NISN[j + 1]) {
-         
+        
+        if (value[j] < value[j + 1]) {
+            
             tempValue = value[j];
             value[j] = value[j + 1];
             value[j + 1] = tempValue;
 
-         
+            
             tempNISN = NISN[j];
             NISN[j] = NISN[j + 1];
             NISN[j + 1] = tempNISN;
 
-          
+            
             tempName = Name[j];
             Name[j] = Name[j + 1];
             Name[j + 1] = tempName;
@@ -42,34 +42,44 @@ for (int i = 0; i < n - 1; i++) {
 
 print();
 }
-void Binary_search(long targetNISN) {
-    int min = 0, max = 6, mid;
+void Sequential_search(long targetValue,string NewName) {
+    int n = 7;
+    bool found = false; 
 
-    while (min <= max) {
-        mid = (min + max) / 2;
-
-        if (NISN[mid] == targetNISN) {
-            cout << "Value of NISN [" << NISN[mid] << "] = " << value[mid] << endl;
-            return;
-        } else if (NISN[mid] > targetNISN) { 
-            min = mid + 1; 
-        } else {
-            max = mid - 1; 
+    for (int i = 0; i < n; i++) {
+        if (value[i] == targetValue) {
+            Name[i] = NewName;  
+            found = true;       
         }
     }
-    cout << "NISN " << targetNISN << " not found." << endl;
+
+    if (!found) {
+        cout << "Value " << targetValue << " not found." << endl;
+    }
 }
 
 int main (){
-long findNISN;
-cout<<"***Bubble Based on NISN***"<<endl;
-Bubble_NISN();
+long findValue;
+string NewName;
+cout<<"***Bubble Based on Value***"<<endl;
+Bubble_value();
 cout<<endl;
 
 
-cout<<"NISN = ";
-cin>> findNISN;
-Binary_search(findNISN);
+cout<<"Value = 60 ";
+findValue = 60;
+cout<<"New Name = Joko ";
+NewName = "Joko";
+cout<<endl;
+Sequential_search(findValue, NewName);
+print();
+cout<<endl;
+if(Name[4] == "Joko" && Name[5] == "Joko"){
+    cout<<"********Test Passed********"<<endl;
+}
+else{
+    cout<<"*********Test Failed*******"<<endl;
+}
 
 
 

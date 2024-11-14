@@ -42,22 +42,25 @@ for (int i = 0; i < n - 1; i++) {
 
 print();
 }
-void Binary_search(long targetNISN) {
-    int min = 0, max = 6, mid;
-
+int Binary_search(long targetNISN) {
+    int min = 0, max = 6, mid, test;
+    bool found = false;
     while (min <= max) {
         mid = (min + max) / 2;
 
         if (NISN[mid] == targetNISN) {
-            cout << "Value of NISN [" << NISN[mid] << "] = " << value[mid] << endl;
-            return;
+            found = true;
+            return test = value[mid];
         } else if (NISN[mid] > targetNISN) { 
             min = mid + 1; 
         } else {
             max = mid - 1; 
         }
     }
-    cout << "NISN " << targetNISN << " not found." << endl;
+    if (!found) {
+    cout << "Value " << targetNISN << " not found." << endl;
+    }
+
 }
 
 int main (){
@@ -67,9 +70,16 @@ Bubble_NISN();
 cout<<endl;
 
 
-cout<<"NISN = ";
-cin>> findNISN;
-Binary_search(findNISN);
+cout<<"NISN = 9952382180"<<endl;
+findNISN = 9952382180;
+cout<<"Value of NISN = "<<Binary_search(findNISN)<<endl;
+
+if(Binary_search(findNISN) == 65){
+    cout<<"*****TEST PASSED*****"<<endl;
+}
+else{
+    cout<<"*****TEST FAILED*****"<<endl;
+}
 
 
 
