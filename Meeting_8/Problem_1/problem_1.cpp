@@ -18,25 +18,23 @@ void Insertion_NISN(){
     int n = 7;
     for (int j = 1; j < n; j++) {
         long tempNISN = NISN[j];
-        string tempName = Name[j];  // or std::string tempName = Name[j];
+        string tempName = Name[j];  
         long tempValue = value[j];
 
         int i = j - 1;
         while (i >= 0 && NISN[i] < tempNISN) {
-            // Shift elements in all three arrays
+            
             NISN[i + 1] = NISN[i];
             Name[i + 1] = Name[i];
             value[i + 1] = value[i];
             i--;
         }
 
-        // Insert temp values at the correct position
         NISN[i + 1] = tempNISN;
         Name[i + 1] = tempName;
         value[i + 1] = tempValue;
     }
 
-    // Print the sorted arrays
    print();
 }
 void Insertion_value(){
