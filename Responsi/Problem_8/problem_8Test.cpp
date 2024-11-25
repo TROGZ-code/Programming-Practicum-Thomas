@@ -2,7 +2,7 @@
 using namespace std;
 
 int list1[] = {1,2,3,4,5}, list2[] = {1,2,3,4,5}, size1, size2,
-check[] = {1,1,1,2,2,3,3,4,4,5,5}, checker = 0;
+check[] = {1,1,2,2,3,3,4,4,5,5}, checker = 0;
 
 
 void sort(int x[], int n){
