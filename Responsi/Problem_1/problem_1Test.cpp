@@ -5,7 +5,7 @@ double rad, area;
 int main()
 {
 rad = 5;
-cout<<"Enter radius = "<<rad;
+cout<<"Enter radius = "<<rad<<endl;
 
 area = 3.14 * rad * rad;
 
